@@ -21,8 +21,9 @@ export const FileUploader = ({}) => {
         }
 
         const client = create('http://127.0.0.1:5001')
-        const { cid } = await client.add('Hello world!');
-        console.log(cid);
+        for await (const file of client.addAll(data)) {
+            console.log(file)
+          } 
 
     }
 
