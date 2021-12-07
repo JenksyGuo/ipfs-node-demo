@@ -1,10 +1,9 @@
 import {useState} from 'react';
-import './style.css';
-import axios from 'axios';
 import { create } from 'ipfs-http-client'
+import { Button, Form } from "react-bootstrap";
+import { toast} from 'react-toastify';
 
-
-export const FileUploader = ({}) => {
+export const FileUploader = ({onSuccess}) => {
     const [files, setFile] =useState([])
 
     const onInputChange = (event) => {
@@ -20,24 +19,50 @@ export const FileUploader = ({}) => {
             data.append('file', files[i]);
         }
 
-        const client = create('http://127.0.0.1:5001')
-        for await (const file of client.addAll(data)) {
-            console.log(file)
-          } 
+        const client = create('http://127.0.0.1:5001');
+        
+        try {
+            for await (const file of client.addAll(data)) {
+                console.log(file)
+            }
+            onSuccess(data);
+            toast.success('Upload Success');
+        } catch (e) {
+            toast.error('Upload Error')
+        }
+    
 
     }
 
     return (
-        <form method="post" action="#" id="#"  onSubmit={onSubmit}>
-            <div className="form-group files">
-                <label>Upload Your File </label>
+        <Form method="post" action="#" id="#"  onSubmit={onSubmit}>
+            <Form.Group className="mb-3 form-group files">
                 <input type="file"
                        onChange={onInputChange}
                        className="form-control"
                        multiple/>
-            </div>
+            </Form.Group>
 
-            <button>Submit</button>
-        </form>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Control type="email" placeholder="Email to" />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Control type="email" placeholder="Your email" />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Control type="text" placeholder="Title" />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Control type="Message" placeholder="Your message" />
+            </Form.Group>
+
+
+            <Button variant="dark" type="submit">
+                Submit
+            </Button>
+        </Form>
     )
 }
