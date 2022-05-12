@@ -18,7 +18,7 @@ export const FileUploader = ({setCids, setIpfsError}) => {
             data.append("",files[i]);
         }
         // creates an ipfs client with API port open at https://localhost:5001
-        const client = create('http://127.0.0.1:5001');
+        const client = create('http://localhost:5001');
         
         // an try-catch to interatively adding files to ipfs. It takes all of the form file data and  
         try {

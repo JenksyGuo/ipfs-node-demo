@@ -11,8 +11,7 @@ import Background from './assets/background.jpg';
 function App() {
   const [cids, setCids] = useState([]);
   const [ipfsError, setIpfsError] = useState(false);
-
-
+  
   return (
     <div className="App" style={{ backgroundImage: `url(${Background})` }}>
       <Container className="p-3">
