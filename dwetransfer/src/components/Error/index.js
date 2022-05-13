@@ -7,11 +7,12 @@ export const Error  = ({setIpfsError}) => {
     }
 
     return (
+    <div>
         <Card.Text>
             <br/>
             <Alert variant='danger'>
                 
-                <p> Failed to upload to IPFS. Make sure your <a hre="https://docs.ipfs.io/how-to/command-line-quick-start/#take-your-node-online">ipfs daemon</a> is running on localhost:5001. And you have selected a file to upload. </p> 
+                <p> Failed to upload to IPFS. Make sure your <a href="https://docs.ipfs.io/how-to/command-line-quick-start/#take-your-node-online">ipfs daemon</a> is running on localhost:5001. And you have selected a file to upload. </p> 
                 <Button
                     variant='danger'
                     onClick={onDismiss}
@@ -20,5 +21,6 @@ export const Error  = ({setIpfsError}) => {
                 </Button>
             </Alert>
         </Card.Text>
+    </div>
     )
 }
