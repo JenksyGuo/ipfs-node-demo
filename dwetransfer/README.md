@@ -1,7 +1,7 @@
 # Dwetransfer IPFS Demo App
 This web application is created to demonstrate how files can be uploaded to ipfs in an simple react application.
 
-The project uses ipfs-http-client package to interface with the ipfs core API. It also relies on the [ipfs daemon/service](https://docs.ipfs.io/how-to/command-line-quick-start/#take-your-node-online) running on localhost:5001 port.
+The project uses [Web3.Storage JS SDK](https://web3.storage/docs/reference/js-client-library/#examples) to interact with IPFS. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -9,13 +9,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 ## How does it work? 
-The single page react application will take one or more files uploaded via a simple HTML form and use the ipfs.addAll() method provided by ipfs-http-client package to interface with IPF core APIs. The application must run side by side with a IPF node on the server to access IPF network. 
+The single page react application will take one or more files uploaded via a simple HTML form and use the client.put(files) method provided by web3.storage package to upload them to IPFS. 
 
-The app will display the successful ipfs.io gateway url of the uploaded resources for user to download. 
+The app will display the successful dweb.link gateway url of the uploaded resources for user to download. 
 
 The intention is user can uplaod to ipfs gateway and have the links sent to a friend via email to received and download temporarily. 
-
-The future state of the app will be to provide permanent storage solution by integrating to a pinning service such as Pinata to allow users get the permanent links for a fee. 
 
 ##### File Upload Page
 ![Screen Shot 2021-12-10 at 9 19 59 pm](https://user-images.githubusercontent.com/47976069/145558155-2d1eb6e7-fdfd-4873-8387-28f15fa556f9.png)
