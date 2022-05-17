@@ -35,16 +35,17 @@ Signup with Web3.Storage
 [Create an account](https://web3.storage/login/) with Web3.Storage by one click: 
 <img width="876" alt="Screen Shot 2022-05-17 at 4 27 03 pm" src="https://user-images.githubusercontent.com/100632895/168743504-58a88b19-4da3-4425-a04a-818d50274aee.png">
 
-Get an API key from Web3.Storage: 
+[Get an API key](https://web3.storage/tokens/) from Web3.Storage: 
+<img width="666" alt="Screen Shot 2022-05-17 at 4 32 09 pm" src="https://user-images.githubusercontent.com/100632895/168744279-76434209-b2fe-4b9b-b22d-426aed8a8e42.png">
 
-Create a .env under /dwetransfer directory and populate it with your Web3.Storage as such: 
+Create a `.env` under `/dwetransfer` directory and populate it with your Web3.Storage as such: 
 
 ```shell
     REACT_APP_WEB3STORAGE_API_TOKEN={YOUR_API_TOKEN}
-    
+
 ```
 
-Navigate to /dwetransfer direction, you can build the project by running: 
+Navigate to `/dwetransfer` directory, you can build the project by running: 
 
 `yarn` or `npm install`
 
@@ -71,21 +72,16 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.
 
 ## CD/CI Deployment (powered by Fleek)
-The application is hosted via IPFS partner Fleek. Fleek integrates with Github.com and continuously integration and deploy the main branch into the IPFS network and provide a Web 2.0 url link for the users to visit. 
+The application is hosted via Fleek. Fleek integrates with Github.com and continuously integration and deploy the main branch into the IPFS network and provide a Web 2.0 url link for the users to visit. 
 
 Whatever is merged into main branch, fleek will recieved a github.com webhook to pull down the latest branch to build using some kind of workers. 
 
-Currently the deployed site is live at: 
-[https://patient-union-5647.on.fleek.co/](https://patient-union-5647.on.fleek.co/)
-
-![Screen Shot 2021-12-10 at 9 34 12 pm](https://user-images.githubusercontent.com/47976069/145560263-3b2bffca-dac7-4752-ad87-c77b598b9f7d.png)
-
+<img width="1171" alt="Screen Shot 2022-05-17 at 4 35 14 pm" src="https://user-images.githubusercontent.com/100632895/168744795-d4c15d48-fb11-45c4-9da7-18a8f875311c.png">
 
 ## Feature backlog
 If I had more time, I would work on:  
 - [ ] add "Email to:" & "Sent from:" email inputs, and integrate with an email service to send an email 
 - [ ] improve error handling by mapping IPFS error with user actionable instructions
-- [ ] integrate with pinning service to provide long term storage for a fee
 - [ ] integrate with a crypto wallet to take payment for premium featuers like permanent storage
 
 ## Development Challenges
