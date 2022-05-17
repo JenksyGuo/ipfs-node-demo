@@ -2,7 +2,7 @@
   "name": "dtransfer",
   "version": "0.2.0",
   "private": true,
-  "proxy": "https://api.web3.storage",
+  "proxy": "https://api.web3.storage/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
